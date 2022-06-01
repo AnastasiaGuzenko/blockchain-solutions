@@ -1,0 +1,16 @@
+.btn-wrapper .btn {
+  margin: 10px;
+  background-color: white;
+}
+
+.app .btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content {
+  margin: 0 auto;
+  width: 1400px;
+  position: relative;
+  overflow: hidden;
+}

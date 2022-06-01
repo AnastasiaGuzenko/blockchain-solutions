@@ -1,15 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from'./App.module.css';
+import { AppBar, Container } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import Content from './content/content';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+      <AppBar className={styles.app}>
+        <Container 
+          fixed
+          className={styles[`btn-wrapper`]}
+        >
+          <Button 
+            variant="contained"  href="#contained-buttons"
+            className={styles.btn}
+          >
+            Конвертер
+          </Button>
+          <Button 
+            variant="contained"  href="#contained-buttons"
+            className={styles.btn}
+          >
+            Мой портфель
+          </Button>
+        </Container>
+      </AppBar>
+      <div className={styles.content}>
+        <Content />
+      </div>
     </div>
   );
 }

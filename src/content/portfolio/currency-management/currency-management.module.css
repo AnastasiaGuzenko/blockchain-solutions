@@ -1,0 +1,28 @@
+.currency-management {
+  display: flex;
+}
+
+.title {
+  color: black;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.standard-basic {
+  margin: 0 25px;
+}
+
+.input {
+  display: flex;
+}
+
+.btn {
+  height: 40px;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.input-item {
+  margin: 8px;
+}
