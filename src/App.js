@@ -1,32 +1,24 @@
-import styles from'./App.module.css';
-import { AppBar, Container } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import Content from './content/content';
+import ConverterPage from './content/converter-page/converter-page';
+import Portfolio from './content/portfolio/portfolio';
+import styles from './App.module.css'
+import { Routes, Route } from 'react-router-dom';
+import Header from './content/header/header';
+import Footer from './footer/footer';
 
 const App = () => {
   return (
-    <div className="App">
-      <AppBar className={styles.app}>
-        <Container 
-          fixed
-          className={styles[`btn-wrapper`]}
-        >
-          <Button 
-            variant="contained"  href="#contained-buttons"
-            className={styles.btn}
-          >
-            Конвертер
-          </Button>
-          <Button 
-            variant="contained"  href="#contained-buttons"
-            className={styles.btn}
-          >
-            Мой портфель
-          </Button>
-        </Container>
-      </AppBar>
+    <div className={styles.wrapper}>
+      <div className={styles.header}>
+       <Header />
+      </div>
       <div className={styles.content}>
-        <Content />
+        <Routes>
+          <Route path='/' element={<ConverterPage />}/>
+          <Route path='/portfolio' element={<Portfolio />}/>
+        </Routes>
+      </div>
+      <div className={styles.footer}>
+        <Footer />
       </div>
     </div>
   );

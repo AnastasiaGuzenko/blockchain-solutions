@@ -1,7 +1,11 @@
+import styles from './footer.module.css'
+
 const Footer = () => {
   return (
-    <div>
-      
+    <div className={styles.footer}>
+      <span>
+        ©2022 Created by Guzenko A. 
+      </span>
     </div>
   );
 }
