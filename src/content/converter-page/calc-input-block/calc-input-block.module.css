@@ -7,3 +7,12 @@
 form .standard-basic {
   width: 100%;
 }
+
+.btn-nav {
+  font-size: 30px;
+  border: 1px solid #3F51B5;
+}
+
+.btn {
+  padding: 5px;
+}

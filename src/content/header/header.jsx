@@ -7,9 +7,6 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
-import { withThemeCreator } from '@material-ui/styles';
-import { Box } from '@material-ui/core';
-import { AutoAwesome } from '@mui/icons-material';
 import styles from './header.module.css'
 
 const useStyles = makeStyles((theme) => ({

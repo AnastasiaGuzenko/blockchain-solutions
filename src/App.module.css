@@ -1,7 +1,7 @@
 .wrapper {
   font-family: "Roboto";
   font-size: 14px;
-  min-width: 1400px;
+  width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;

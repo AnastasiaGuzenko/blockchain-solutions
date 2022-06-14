@@ -1,17 +1,18 @@
 .portfolio-page {
-  margin: 80px 0;
+  margin: 40px 0;
 }
 
 .user-name {
   color: black;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .user-portfolio {
   display: flex;
   justify-content: space-evenly;
-  margin: 50px auto;
+  margin: 40px auto;
   border: 1px solid #3F51B5;
-  padding: 35px;
+  padding: 30px;
+  width: 100%;
 }
