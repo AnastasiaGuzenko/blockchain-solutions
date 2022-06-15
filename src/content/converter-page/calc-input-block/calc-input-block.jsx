@@ -1,17 +1,38 @@
 import styles from './calc-input-block.module.css';
-import TextField from '@material-ui/core/TextField';
-import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import { BottomNavigation, BottomNavigationAction, TextField } from '@material-ui/core';
 import { FaEthereum, FaBitcoin, FaDollarSign} from "react-icons/fa";
+import { useEffect } from 'react';
 
 const CalcInputBlock = ({
-  value, setValue
+  valueBtn, 
+  setValueBtn,
+
+  inputValue,
+  setInputValue,
+
+  setInputValueChange,
+
+  calculatorRates,
+
 }) => {
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+
+    setInputValueChange(Number(event.target.value) * calculatorRates)
+  }
+
+  useEffect(() => {
+    setInputValueChange(Number(inputValue || 0) * (calculatorRates || 0))
+
+  }, [calculatorRates])
+
   return (
     <div className={styles[`calc-input-block`]}>
       <BottomNavigation
-        value={value}
+        value={valueBtn}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          setValueBtn(newValue);
         }}
         className={styles[`btn-nav`]}
       >
@@ -35,12 +56,13 @@ const CalcInputBlock = ({
         />
       </BottomNavigation>
       <div className={styles[`input-wrapper`]}>
-        <form noValidate autoComplete="off">
-          <TextField 
-            className={styles[`standard-basic`]}
-            // label="кол-во валюты" 
-          />
-       </form>
+        <TextField 
+          className={styles.input}
+          // label="кол-во валюты"
+          type="number"
+          onChange={handleChange}
+          value={inputValue}
+        />
       </div>
     </div>
   )

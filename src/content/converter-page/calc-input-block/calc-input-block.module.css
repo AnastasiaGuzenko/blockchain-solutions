@@ -4,10 +4,6 @@
   padding: 15px;
 }
 
-form .standard-basic {
-  width: 100%;
-}
-
 .btn-nav {
   font-size: 30px;
   border: 1px solid #3F51B5;
@@ -15,4 +11,8 @@ form .standard-basic {
 
 .btn {
   padding: 5px;
+}
+
+.input {
+  width: 100%;
 }

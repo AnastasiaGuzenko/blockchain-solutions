@@ -4,13 +4,14 @@ const ExchangeRates = ({
   selectedRateValue,
   rateValue,
   dataValue,
+  ratesNum,
+  setRatesNum
 }) => {
-  const [rates, setRates] = useState();
-
+  
   useEffect(() => {
     dataValue.map((obj) => {
       if (obj.convertFrom == selectedRateValue && obj.convertTo == rateValue) {
-        setRates(obj.result)
+        setRatesNum(obj.result)
       } else {
         return obj
       }
@@ -19,7 +20,7 @@ const ExchangeRates = ({
 
   return (
     <div>
-      <p>1 {selectedRateValue} = {rates} {rateValue}</p>
+      <p>1 {selectedRateValue} = {ratesNum} {rateValue}</p>
     </div>
   )
 }
