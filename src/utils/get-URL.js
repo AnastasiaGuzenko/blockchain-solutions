@@ -41,3 +41,22 @@ export function getConvertURL(API, dataValue, setDataValue) {
       );
     });
 };
+
+export function getExchangeRateHistoryURL(API, setHistoryBTC, historyBTC) {
+  fetch(API)
+    .then(response => response.json())
+    .then(jsonResponse => {   
+      setHistoryBTC(
+        historyBTC.map((obj) => {
+          if (obj.id == 'USD' && obj.data == '17-06-2022') {
+            return {
+              ...obj,
+              rate: jsonResponse.market_data.current_price.usd
+            }
+          } else {
+            return obj;
+          }
+        })
+      )
+    });
+};

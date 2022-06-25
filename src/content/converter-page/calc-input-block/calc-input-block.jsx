@@ -6,25 +6,25 @@ import { useEffect } from 'react';
 const CalcInputBlock = ({
   valueBtn, 
   setValueBtn,
-
   inputValue,
   setInputValue,
-
   setInputValueChange,
-
   calculatorRates,
+  activePart,
+  setActivePart,
+  activeName,
 
 }) => {
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
-
     setInputValueChange(Number(event.target.value) * calculatorRates)
   }
 
   useEffect(() => {
-    setInputValueChange(Number(inputValue || 0) * (calculatorRates || 0))
-
+    if (activeName === activePart) {
+      setInputValueChange(Number(inputValue || 0) * (calculatorRates || 0))
+    }
   }, [calculatorRates])
 
   return (
@@ -33,6 +33,7 @@ const CalcInputBlock = ({
         value={valueBtn}
         onChange={(event, newValue) => {
           setValueBtn(newValue);
+          setActivePart(activeName);
         }}
         className={styles[`btn-nav`]}
       >
@@ -58,7 +59,6 @@ const CalcInputBlock = ({
       <div className={styles[`input-wrapper`]}>
         <TextField 
           className={styles.input}
-          // label="кол-во валюты"
           type="number"
           onChange={handleChange}
           value={inputValue}

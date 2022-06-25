@@ -8,17 +8,20 @@ import { useState } from 'react';
 const ConverterPage = ({
   valueFrom,
   setValueFrom,
-
   valueTo,
   setValueTo,
-
   dataValue,
 }) => {
   const [ratesConvertFrom, setRatesConvertFrom] = useState();
   const [ratesConvertTo, setRatesConvertTo] = useState();
-
   const [inputValueFrom, setInputValueFrom] = useState('');
   const [inputValueTo, setInputValueTo] = useState('');
+  const [activePart, setActivePart] = useState('left');
+
+  const changeCurrencyOnClick = () => {
+    setValueFrom(valueTo)
+    setValueTo(valueFrom)
+  }
 
   return (
     <div className={styles[`converter-page`]}>
@@ -28,14 +31,13 @@ const ConverterPage = ({
           <CalcInputBlock 
             valueBtn={valueFrom}
             setValueBtn={setValueFrom}
-
             inputValue={inputValueFrom} 
             setInputValue={setInputValueFrom}
-
             setInputValueChange={setInputValueTo}
-
             calculatorRates={ratesConvertFrom}
-
+            activePart={activePart}
+            setActivePart={setActivePart}
+            activeName='left'
           />
           <ExchangeRates 
             selectedRateValue={valueFrom}
@@ -50,6 +52,7 @@ const ConverterPage = ({
           variant="contained" 
           color="primary" 
           className={styles.btn}
+          onClick={changeCurrencyOnClick}
         >
           ⇄
         </Button>
@@ -58,14 +61,13 @@ const ConverterPage = ({
           <CalcInputBlock 
             valueBtn={valueTo}
             setValueBtn={setValueTo}
-
             inputValue={inputValueTo} 
             setInputValue={setInputValueTo}
-
             setInputValueChange={setInputValueFrom}
-
             calculatorRates={ratesConvertTo}
-
+            activePart={activePart}
+            setActivePart={setActivePart}
+            activeName='right'
           />
           <ExchangeRates 
             rateValue={valueFrom}
