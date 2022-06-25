@@ -5,7 +5,7 @@ const CurrencyChart = () => {
     <div 
       className={styles[`currency-chart`]}
     >
-      CurrencyChart
+      автпвдкпо
     </div>
   )
 };
