@@ -2,7 +2,7 @@
   "name": "blockchain-solutions",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anastasiaguzenko.github.io/blockchain-solutions/",
+  "homepage": "https://anastasiaguzenko.github.io/converter-currency/",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
