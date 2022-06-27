@@ -1,1 +1,1 @@
-https://anastasiaguzenko.github.io/blockchain-solutions/
+https://anastasiaguzenko.github.io/blockchain-solutions-demo/
