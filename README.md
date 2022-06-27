@@ -1,1 +1,1 @@
-https://anastasiaguzenko.github.io/blockchain-solutions-demo/
+https://anastasiaguzenko.github.io/converter-currency/
