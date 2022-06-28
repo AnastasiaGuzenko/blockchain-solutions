@@ -79,10 +79,10 @@ const ConverterPage = ({
           />
         </div>
       </div>
-      <div className={styles.diagram}>
+      {/* <div className={styles.diagram}>
         <p className={styles.p}>Динамика цены за последние 14 дней</p>
         <BarChart />
-      </div>
+      </div> */}
     </div>
   );
 }
